@@ -22,7 +22,7 @@ handleSubmit = (event) => {
     type: 'ADD_FEELING',
     payload: this.state.feeling
   })
-
+  this.props.history.push('/understanding');
 }
 
   render(){
