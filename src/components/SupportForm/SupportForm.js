@@ -23,7 +23,7 @@ handleSubmit = (event) => {
       type: 'ADD_SUPPORT',
       payload: this.state
     })
-    this.props.history.push('/comments');
+    this.props.history.push('/comment');
   } else {
     alert("Please enter a numerical value")
   }

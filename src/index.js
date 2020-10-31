@@ -14,7 +14,8 @@ import logger from 'redux-logger'
 const feedbackData = {
   feelings: 0,
   understanding: 0,
-  support: 0
+  support: 0,
+  comment: ''
 }
 
 const feelingsReducer = (state = feedbackData.feelings, action) => {
@@ -41,12 +42,20 @@ const supportReducer = (state = feedbackData.support, action) => {
 return state;
 };
 
+const commentReducer = (state = feedbackData.comment, action) => {
+  if(action.type === 'ADD_COMMENT') {
+    console.log('in COMMENT  Reducer', state);
+    return[action.payload]
+  }
+return state;
+};
 
 const storeInstance = createStore(
   combineReducers({
     feelingsReducer,
     understandingReducer,
-    supportReducer
+    supportReducer,
+    commentReducer
   }),
   applyMiddleware(logger)
 );
