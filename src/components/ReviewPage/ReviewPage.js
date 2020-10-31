@@ -3,13 +3,21 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 class ReviewPage extends Component {
+
   render(){
+    console.log('REDUX STATE', this.props.reduxState);
+    
     return(
-      <p>Review Your Feedback Here</p>
+      <ul>
+        <li>Feelings: {this.props.reduxState.feelingsReducer.feelings}</li>
+      </ul>
     )
   }
 }
 
 
+const putReduxStateOnProps = (reduxState) => ({
+  reduxState
+});
 
-export default ReviewPage;
+export default connect(putReduxStateOnProps)(ReviewPage);

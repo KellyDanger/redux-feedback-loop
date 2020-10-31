@@ -10,7 +10,6 @@ import {Provider} from 'react-redux';
 import logger from 'redux-logger'
 
 
-
 const feedbackData = {
   feelings: 0,
   understanding: 0,
