@@ -38,4 +38,8 @@ class App extends Component {
   }
 }
 
-export default App;
+const putReduxStateOnProps = (reduxState) => ({
+  reduxState
+});
+
+export default connect(putReduxStateOnProps)(App);

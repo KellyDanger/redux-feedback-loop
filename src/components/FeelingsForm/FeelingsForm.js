@@ -2,25 +2,34 @@ import axios from 'axios';
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
+
 class FeelingsForm extends Component {
 state = {
   feeling: 0
 }
 
-handleFeelingChange = () => {
-  console.log('Feelings!!!');
-  
+handleFeelingChange = (event) => {
+  this.setState({
+    feeling: event.target.value
+  });
 }
 
-handleSubmit = () => {
+handleSubmit = (event) => {
+  event.preventDefault();
   console.log('clicked feelings');
+  console.log(this.state.feeling, 'Feelings!!!');
+  this.props.dispatch({
+    type: 'ADD_FEELING',
+    payload: this.state.feeling
+  })
+
 }
 
   render(){
     return(
       <form onSubmit={this.handleSubmit}>
-        <lable htmlFor="feelingsInput">Feeling?</lable>
-        <input type="number" onChange={this.handleFeelingChange}/>
+        <label htmlFor="feelingsInput">Feeling?</label>
+        <input id="feelingsInput" type="number" onChange={this.handleFeelingChange}/>
         <button onClick={this.handleSubmit}>Next</button>
       </form>
     )
@@ -29,4 +38,8 @@ handleSubmit = () => {
 
 
 
-export default FeelingsForm;
+const putReduxStateOnProps = (reduxState) => ({
+    reduxState
+  });
+
+export default connect(putReduxStateOnProps)(FeelingsForm);
