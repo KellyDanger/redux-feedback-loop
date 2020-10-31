@@ -1,4 +1,4 @@
-import axios from 'axios';
+
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
@@ -15,14 +15,18 @@ handleFeelingChange = (event) => {
 }
 
 handleSubmit = (event) => {
-  event.preventDefault();
-  console.log('clicked feelings');
-  console.log(this.state.feeling, 'Feelings!!!');
-  this.props.dispatch({
-    type: 'ADD_FEELING',
-    payload: this.state.feeling
-  })
-  this.props.history.push('/understanding');
+  if(this.state.feeling > 0) {
+    event.preventDefault();
+    console.log('clicked feelings');
+    console.log(this.state.feeling, 'Feelings!!!');
+    this.props.dispatch({
+      type: 'ADD_FEELING',
+      payload: this.state
+    })
+    this.props.history.push('/understanding');
+  } else{
+    alert("Please enter a numerical value")
+  }
 }
 
   render(){
@@ -35,8 +39,6 @@ handleSubmit = (event) => {
     )
   }
 }
-
-
 
 const putReduxStateOnProps = (reduxState) => ({
     reduxState

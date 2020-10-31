@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import {connect} from 'react-redux';
 import {HashRouter as Router, Route, Link} from 'react-router-dom';
 //styling
@@ -25,7 +25,7 @@ class App extends Component {
         <br/>
         <Router>
           <div className="forms">
-          <Route exact path = "/feelings" component={FeelingsForm}/>
+          <Route exact path = "/" component={FeelingsForm}/>
           <Route path = "/understanding" component={UnderstandingForm}/>
           <Route path = "/support" component={SupportForm}/>
           <Route path = "/comment" component={CommentForm}/>
