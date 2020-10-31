@@ -9,7 +9,7 @@ class ReviewPage extends Component {
     
     return(
       <ul>
-        <li>Feelings: {this.props.reduxState.feelingsReducer.feelings}</li>
+        {JSON.stringify(this.props.reduxState)}
       </ul>
     )
   }
