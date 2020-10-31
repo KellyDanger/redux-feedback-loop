@@ -7,6 +7,11 @@ import './App.css';
 
 //components
 import FeelingsForm from '../FeelingsForm/FeelingsForm';
+import UnderstandingForm from '../UnderstandingForm/UnderstandingForm';
+import SupportForm from '../SupportForm/SupportForm';
+import CommentForm from '../CommentForm/CommentForm';
+import ReviewPage from '../ReviewPage/ReviewPage';
+import SuccessPage from '../SuccessPage/SuccessPage';
 
 
 class App extends Component {
@@ -19,9 +24,15 @@ class App extends Component {
         </header>
         <br/>
         <Router>
+          <div className="forms">
           <Route exact path = "/feelings" component={FeelingsForm}/>
+          <Route path = "/understanding" component={UnderstandingForm}/>
+          <Route path = "/support" component={SupportForm}/>
+          <Route path = "/comment" component={CommentForm}/>
+          </div>
+          <Route path="/review" component={ReviewPage}/>
+          <Route path="/success" component={SuccessPage}/>
         </Router>
-       
       </div>
     );
   }
