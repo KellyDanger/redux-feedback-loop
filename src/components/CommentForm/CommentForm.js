@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-
 class CommentForm extends Component {
 state = {
   comment: ''
@@ -17,7 +16,7 @@ handleSubmit = (event) => {
   event.preventDefault();
   this.props.dispatch({
     type: 'ADD_COMMENT',
-    payload: this.state
+    payload: this.state.comment
   })
   this.props.history.push('/review');
 }

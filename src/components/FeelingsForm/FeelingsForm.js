@@ -18,7 +18,7 @@ handleSubmit = (event) => {
     event.preventDefault();
     this.props.dispatch({
       type: 'ADD_FEELING',
-      payload: this.state
+      payload: this.state.feeling
     })
     this.props.history.push('/understanding');
   } else {

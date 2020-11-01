@@ -17,7 +17,7 @@ handleSubmit = (event) => {
     event.preventDefault();
     this.props.dispatch({
       type: 'ADD_SUPPORT',
-      payload: this.state
+      payload: this.state.support
     })
     this.props.history.push('/comment');
   } else {
