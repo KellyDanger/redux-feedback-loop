@@ -5,36 +5,32 @@ import {connect} from 'react-redux';
 
 class FeelingsForm extends Component {
 state = {
-  feeling: 0
+  feeling: null
 }
-
 handleFeelingChange = (event) => {
   this.setState({
     feeling: event.target.value
   });
 }
-
+//on submit, send data to redux store and navigate to understanding page
 handleSubmit = (event) => {
-  if(this.state.feeling > 0) {
+  if(this.state.feeling > 0 && this.state.feeling < 6) {
     event.preventDefault();
-    // console.log('clicked feelings');
-    // console.log(this.state.feeling, 'Feelings!!!');
     this.props.dispatch({
       type: 'ADD_FEELING',
       payload: this.state
     })
     this.props.history.push('/understanding');
-  } else{
-    alert("Please enter a numerical value")
+  } else {
+    alert("Please enter a numerical value between 1 and 5")
   }
 }
-
   render(){
     return(
-      <form onSubmit={this.handleSubmit}>
+      <form>
         <h1>How are you feeling today?</h1>
-        <label htmlFor="feelingsInput">Feeling?</label>
-        <input autoFocus id="feelingsInput" type="number" onChange={this.handleFeelingChange}/>
+        <label htmlFor="feelingsInput">How are you feeling on a scale of 1 to 5? </label>
+        <input autoFocus id="feelingsInput" type="number" onChange={this.handleFeelingChange} placeholder="required"/>
         <button onClick={this.handleSubmit}>Next</button>
       </form>
     )
