@@ -23,9 +23,8 @@ handleSubmit = (event) => {
 }
   render(){
     return(
-      <form onSubmit={this.handleSubmit}>
+      <form>
         <h1>Any comments you want to leave?</h1>
-        <label htmlFor="commentInput">Comment?</label>
         <input autoFocus id="commentInput" type="text" onChange={this.handleCommentChange} placeholder="optional"/>
         <button onClick={this.handleSubmit}>Next</button>
       </form>

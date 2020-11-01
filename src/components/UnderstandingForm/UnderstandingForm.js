@@ -15,25 +15,22 @@ handleUnderstandingChange = (event) => {
 }
 
 handleSubmit = (event) => {
-  if(this.state.understanding > 0 ) {
+  if(this.state.understanding > 0 && this.state.understanding < 6 ) {
     event.preventDefault();
-    console.log('clicked understanding');
-    console.log(this.state.understanding, 'Understanding!!!');
     this.props.dispatch({
       type: 'ADD_UNDERSTANDING',
       payload: this.state
     })
     this.props.history.push('/support');
   } else {
-    alert("Please enter a numerical value")
+    alert("Please enter a numerical value between 1 and 5")
   }
 }
 
   render(){
     return(
       <form onSubmit={this.handleSubmit}>
-        <h1>How well are you understanding the content?</h1>
-        <label htmlFor="understandingInput">Understanding?</label>
+        <h2>How well are you understanding the content on a scale of 1 to 5?</h2>
         <input autoFocus id="understandingInput" type="number" onChange={this.handleUnderstandingChange}/>
         <button onClick={this.handleSubmit}>Next</button>
       </form>

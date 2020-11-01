@@ -28,8 +28,7 @@ handleSubmit = (event) => {
   render(){
     return(
       <form>
-        <h1>How are you feeling today?</h1>
-        <label htmlFor="feelingsInput">How are you feeling on a scale of 1 to 5? </label>
+        <h1>How are you feeling today on a scale of 1 to 5?</h1>
         <input autoFocus id="feelingsInput" type="number" onChange={this.handleFeelingChange} placeholder="required"/>
         <button onClick={this.handleSubmit}>Next</button>
       </form>

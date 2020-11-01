@@ -15,26 +15,23 @@ handleSupportChange = (event) => {
 }
 
 handleSubmit = (event) => {
-  if(this.state.support > 0 ) {
+  if(this.state.support > 0 && this.state.support < 6) {
     event.preventDefault();
-    console.log('clicked support');
-    console.log(this.state.support, 'SUPPORT!!!');
     this.props.dispatch({
       type: 'ADD_SUPPORT',
       payload: this.state
     })
     this.props.history.push('/comment');
   } else {
-    alert("Please enter a numerical value")
+    alert("Please enter a numerical value between 1 and 5")
   }
 }
 
   render(){
     return(
-      <form onSubmit={this.handleSubmit}>
-        <h1>How well are you being supported?</h1>
-        <label htmlFor="supportInput">Support?</label>
-        <input autoFocus id="supportInput" type="number" onChange={this.handleSupportChange}/>
+      <form>
+        <h1>How well are you being supported on a scale of 1 to 5?</h1>
+        <input autoFocus id="supportInput" type="number" onChange={this.handleSupportChange} placeholder="required"/>
         <button onClick={this.handleSubmit}>Next</button>
       </form>
     )
