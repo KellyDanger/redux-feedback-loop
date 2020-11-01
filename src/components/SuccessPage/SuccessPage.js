@@ -1,12 +1,10 @@
-import axios from 'axios';
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
 
 class SuccessPage extends Component {
 handleClick = () => {
+  // on click, this redirects the user back to the homepage to start the survey over again
   this.props.history.push('/');
 }
-
   render(){
     return(
       <>
@@ -16,7 +14,5 @@ handleClick = () => {
     )
   }
 }
-
-
 
 export default SuccessPage;

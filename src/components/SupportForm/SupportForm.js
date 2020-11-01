@@ -1,19 +1,17 @@
-
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-
 
 class SupportForm extends Component {
 state = {
   support: 0
 }
-
+//set localstate to input value
 handleSupportChange = (event) => {
   this.setState({
     support: event.target.value
   });
 }
-
+//on click send input value to redux store.
 handleSubmit = (event) => {
   if(this.state.support > 0 && this.state.support < 6) {
     event.preventDefault();
@@ -26,7 +24,6 @@ handleSubmit = (event) => {
     alert("Please enter a numerical value between 1 and 5")
   }
 }
-
   render(){
     return(
       <form>

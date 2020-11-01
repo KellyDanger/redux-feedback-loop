@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 
 class FeelingsForm extends Component {
 state = {
-  feeling: null
+  feeling: 0
 }
 handleFeelingChange = (event) => {
   this.setState({

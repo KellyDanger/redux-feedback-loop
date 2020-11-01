@@ -11,21 +11,15 @@ class ReviewPage extends Component {
       comments: this.props.reduxState.commentReducer.comment
     }
   }
-
   handleClick = (event) => {
-    // event.preventDefault();
-    // console.log('redux state is', this.state.feedbackData);
+    //on click, send data to server via axios post req
     axios.post('/feedback', this.state.feedbackData).then((response) => {
       this.props.history.push('/success');
-      console.log('handleClick POST', response.data);
     }).catch((error) => {
       console.log('error in POST', error);
     });  
   }
-
   render(){
-    console.log('REDUX STATE', this.props.reduxState);
-    
     return(
       <ul>
         <h1>Review Your Feedback</h1>
@@ -38,8 +32,6 @@ class ReviewPage extends Component {
     )
   }
 }
-
-
 const putReduxStateOnProps = (reduxState) => ({
   reduxState
 });
