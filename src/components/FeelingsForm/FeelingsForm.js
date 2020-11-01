@@ -5,17 +5,17 @@ import {connect} from 'react-redux';
 
 class FeelingsForm extends Component {
 state = {
-  feeling: 0
+  feelings: 0
 }
 
 handleFeelingChange = (event) => {
   this.setState({
-    feeling: event.target.value
+    feelings: event.target.value
   });
 }
 
 handleSubmit = (event) => {
-  if(this.state.feeling > 0) {
+  if(this.state.feelings > 0) {
     event.preventDefault();
     console.log('clicked feelings');
     console.log(this.state.feeling, 'Feelings!!!');
