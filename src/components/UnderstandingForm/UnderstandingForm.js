@@ -32,8 +32,9 @@ handleSubmit = (event) => {
   render(){
     return(
       <form onSubmit={this.handleSubmit}>
+        <h1>How well are you understanding the content?</h1>
         <label htmlFor="understandingInput">Understanding?</label>
-        <input id="understandingInput" type="number" onChange={this.handleUnderstandingChange}/>
+        <input autoFocus id="understandingInput" type="number" onChange={this.handleUnderstandingChange}/>
         <button onClick={this.handleSubmit}>Next</button>
       </form>
     )
