@@ -26,13 +26,13 @@ class App extends Component {
         {/* routes to each form component */}
         <Router>
           <div className="forms">
-          <Route exact path = "/" component={FeelingsForm}/>
-          <Route path = "/understanding" component={UnderstandingForm}/>
-          <Route path = "/support" component={SupportForm}/>
-          <Route path = "/comment" component={CommentForm}/>
+            <Route exact path = "/" component={FeelingsForm}/>
+            <Route path = "/understanding" component={UnderstandingForm}/>
+            <Route path = "/support" component={SupportForm}/>
+            <Route path = "/comment" component={CommentForm}/>
+            <Route path="/review" component={ReviewPage}/>
+            <Route path="/success" component={SuccessPage}/>
           </div>
-          <Route path="/review" component={ReviewPage}/>
-          <Route path="/success" component={SuccessPage}/>
         </Router>
       </div>
     );

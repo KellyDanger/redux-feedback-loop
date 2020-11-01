@@ -27,7 +27,7 @@ class ReviewPage extends Component {
         <li>Understanding: {this.props.reduxState.understandingReducer}</li>
         <li>Support: {this.props.reduxState.supportReducer}</li>
         <li>Comment: {this.props.reduxState.commentReducer}</li>
-        <button onClick={this.handleClick}>SUBMIT</button>
+        <button className="submitBtn" onClick={this.handleClick}>SUBMIT</button>
       </ul>
     )
   }

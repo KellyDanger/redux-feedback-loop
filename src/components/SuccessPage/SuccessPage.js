@@ -9,7 +9,7 @@ handleClick = () => {
     return(
       <>
       <h1>Thank You!</h1>
-      <button onClick={this.handleClick}>Leave New Feedback</button>
+      <button className="resetBtn" onClick={this.handleClick}>Leave New Feedback</button>
       </>
     )
   }

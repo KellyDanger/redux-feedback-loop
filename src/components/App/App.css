@@ -16,4 +16,55 @@
 .App-intro {
   font-size: large;
 }
+.App h1 {
+  margin-bottom: 5%;
+}
+
+.App input {
+  border: none;
+  border-bottom: 3px solid blue;
+  font-size: large;
+  text-align: center;
+  
+}
+.App input:focus {
+  outline: none;
+}
+
+button {
+  background-color: lightgray;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  padding: 15px 20px;
+  margin-left: 15%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+}
+
+button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.submitBtn {
+  margin: 5% 0 0 0;
+}
+
+.resetBtn {
+  background-color: #3399ff;
+  margin: 5% 0 0 0;
+  border-radius: 2px;
+  padding: 10px 60px 10px 60px;
+  color: white;
+  margin-top: 0;
+}
+ul {
+  clear: left;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  padding-bottom: 2%;
+  font-size: 20px;
+}
 
