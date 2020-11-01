@@ -3,9 +3,16 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 class SuccessPage extends Component {
+handleClick = () => {
+  this.props.history.push('/');
+}
+
   render(){
     return(
-      <p>GOLD STAR</p>
+      <>
+      <h1>Thank You!</h1>
+      <button onClick={this.handleClick}>Leave New Feedback</button>
+      </>
     )
   }
 }
