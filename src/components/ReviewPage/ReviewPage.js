@@ -14,8 +14,9 @@ class ReviewPage extends Component {
 
   handleClick = (event) => {
     // event.preventDefault();
-    console.log('redux state is', this.state.feedbackData);
+    // console.log('redux state is', this.state.feedbackData);
     axios.post('/feedback', this.state.feedbackData).then((response) => {
+      this.props.history.push('/success');
       console.log('handleClick POST', response.data);
     }).catch((error) => {
       console.log('error in POST', error);

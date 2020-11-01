@@ -17,8 +17,8 @@ handleFeelingChange = (event) => {
 handleSubmit = (event) => {
   if(this.state.feeling > 0) {
     event.preventDefault();
-    console.log('clicked feelings');
-    console.log(this.state.feeling, 'Feelings!!!');
+    // console.log('clicked feelings');
+    // console.log(this.state.feeling, 'Feelings!!!');
     this.props.dispatch({
       type: 'ADD_FEELING',
       payload: this.state
