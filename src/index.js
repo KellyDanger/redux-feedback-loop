@@ -11,13 +11,13 @@ import logger from 'redux-logger'
 
 
 const feedbackData = {
-  feelings: 0,
+  feeling: 0,
   understanding: 0,
   support: 0,
   comment: ''
 }
 
-const feelingsReducer = (state = feedbackData.feelings, action) => {
+const feelingsReducer = (state = feedbackData.feeling, action) => {
   if(action.type === 'ADD_FEELING') {
     console.log('in feelingsReducer', state);
     return action.payload

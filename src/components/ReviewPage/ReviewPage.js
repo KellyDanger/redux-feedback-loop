@@ -3,10 +3,23 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 class ReviewPage extends Component {
+  state = {
+    feedbackData:{
+      feeling: this.props.reduxState.feelingsReducer.feeling,
+      understanding: this.props.reduxState.understandingReducer.understanding,
+      support: this.props.reduxState.supportReducer.support,
+      comments: this.props.reduxState.commentReducer.comment
+    }
+  }
 
-  handleClick = () => {
-    console.log('clicked');
-    
+  handleClick = (event) => {
+    // event.preventDefault();
+    console.log('redux state is', this.state.feedbackData);
+    axios.post('/feedback', this.state.feedbackData).then((response) => {
+      console.log('handleClick POST', response.data);
+    }).catch((error) => {
+      console.log('error in POST', error);
+    });  
   }
 
   render(){
